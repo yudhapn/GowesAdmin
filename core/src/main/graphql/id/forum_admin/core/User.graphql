@@ -1,0 +1,30 @@
+query UserAccount($accountId: String) {
+    user(query:{accountId: $accountId}){
+        ... UserDetails
+    }
+}
+
+mutation UpdateUserByAccountId($accountId: String, $user: UserUpdateInput!) {
+    updateOneUser(query: {accountId: $accountId}, set: $user){
+        ... UserDetails
+    }
+}
+
+fragment UserDetails on User{
+    _id
+    name
+    username
+    biodata
+    avatar
+    accountId
+    notificationToken
+    createdOn
+}
+
+fragment UserCommunityDetails on Member {
+    community {
+        _id
+        avatar
+        name
+    }
+}

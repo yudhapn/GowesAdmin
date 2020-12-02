@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/request_nav"
+    app:startDestination="@id/communityRequestFragment">
+
+    <fragment
+        android:id="@+id/communityRequestFragment"
+        android:name="id.forum_admin.request.presentation.CommunityRequestFragment"
+        app:moduleName="request">
+        <action
+            android:id="@+id/action_to_detail"
+            app:destination="@id/requestDetailFragment" />
+
+    </fragment>
+    <dialog
+        android:id="@+id/requestDetailFragment"
+        android:name="id.forum_admin.request.presentation.detail.RequestDetailDialogFragment"
+        app:moduleName="request">
+        <argument
+            android:name="community"
+            app:argType="id.forum_admin.gowes.request.domain.model.Community" />
+    </dialog>
+
+</navigation>

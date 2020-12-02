@@ -1,0 +1,36 @@
+query CommunityRequests {
+    communityRequests {
+        ... CommunityRequestDetails
+    }
+}
+
+
+mutation AcceptRequest($input: RequestAcceptInputMutation!) {
+    acceptCommunityRequestMutation(input: $input) {
+        _id
+    }
+}
+
+mutation RejectRequest($input: RequestRejectInputMutation!) {
+    rejectCommunityRequestMutation(input: $input) {
+        _id
+    }
+}
+
+fragment CommunityRequestDetails on CommunityRequest{
+    _id
+    community {
+        _id
+        avatar
+        name
+        city
+        province
+        biodata
+    }
+    user {
+        _id
+        avatar
+        username
+    }
+    requestedAt
+}

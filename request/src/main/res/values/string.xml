@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reject_request_message">Are you sure want to REJECT this request?</string>
+    <string name="approve_request_message">Are you sure want to APPROVE this request?</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="confirm_button">Yes</string>
+    <string name="content_request"><![CDATA[<b>%1$s</b> apply for community creation <b>%2$s</b>]]></string>
+    <string name="community_avatar">Profile image of community</string>
+    <string name="empty_member">0 Member</string>
+    <string name="empty_post">0 Post</string>
+</resources>

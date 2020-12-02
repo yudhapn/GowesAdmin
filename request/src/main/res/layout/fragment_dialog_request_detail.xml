@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="community"
+            type="id.forum_admin.gowes.request.domain.model.Community" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/email_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/grid_0_5"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Gowes.MediumComponent.Marked">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/grid_3"
+            app:paddingBottomSystemWindowInsets="@{true}">
+
+            <ImageView
+                android:id="@+id/iv_community"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/community_avatar"
+                app:glideCircularCrop2="@{true}"
+                app:glideSrc2="@{community.profile.avatar}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_community_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:layout_marginEnd="@dimen/grid_1"
+                android:text="@{community.profile.name}"
+                android:textAppearance="@style/TextAppearance.Gowes.Body1"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_community"
+                app:layout_constraintTop_toTopOf="@id/iv_community"
+                tools:text="BM Malang Raya" />
+
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_0_5"
+                android:layout_marginEnd="@dimen/grid_1"
+                android:text="@{community.address.city + `, ` + community.address.province}"
+                android:textAppearance="@style/TextAppearance.Gowes.Body2"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_community_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_community_name"
+                tools:text="Malang, Indonesia" />
+
+            <TextView
+                android:id="@+id/tv_post_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_0_5"
+                android:drawablePadding="@dimen/grid_0_5"
+                android:gravity="center_vertical"
+                android:text="@string/empty_post"
+                android:textAppearance="@style/TextAppearance.Gowes.Body3"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_post"
+                app:layout_constraintStart_toStartOf="@id/tv_location"
+                app:layout_constraintTop_toBottomOf="@id/tv_location"
+                tools:text="349 Post" />
+
+            <TextView
+                android:id="@+id/tv_member_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:drawablePadding="@dimen/grid_0_5"
+                android:gravity="center_vertical"
+                android:text="@string/empty_member"
+                android:textAppearance="@style/TextAppearance.Gowes.Body3"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_community"
+                app:layout_constraintBottom_toBottomOf="@id/tv_post_amount"
+                app:layout_constraintStart_toEndOf="@id/tv_post_amount"
+                app:layout_constraintTop_toTopOf="@id/tv_post_amount"
+                tools:text="100 Members" />
+
+            <TextView
+                android:id="@+id/tv_bio_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_2"
+                android:text="@{community.profile.biodata}"
+                android:textAppearance="@style/TextAppearance.Gowes.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/iv_community"
+                app:layout_constraintTop_toBottomOf="@id/tv_post_amount"
+                tools:text="Introvert" />
+
+            <TextView
+                android:id="@+id/tv_request_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_2"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Gowes.Body2"
+                android:textColor="#BDBDBD"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/iv_community"
+                app:layout_constraintTop_toBottomOf="@id/tv_bio_data"
+                app:setRequestTime="@{community.createdAt}"
+                tools:text="Introvert" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

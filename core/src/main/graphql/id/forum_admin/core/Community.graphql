@@ -1,0 +1,18 @@
+query Communities {
+    communitys {
+        ... CommunityDetails
+    }
+}
+
+fragment CommunityDetails on Community{
+    _id
+    avatar
+    biodata
+    city
+    createdOn
+    isActive
+    isPrivate
+    memberCount
+    name
+    province
+}

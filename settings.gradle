@@ -1,0 +1,6 @@
+include ':login'
+include ':report'
+include ':request'
+include ':core'
+include ':app'
+rootProject.name = "GowesAdmin"
